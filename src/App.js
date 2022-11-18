@@ -1,38 +1,44 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const Father = styled.div`
   display: flex;
 `;
-const Box = styled.div`
-  background-color: ${(props) => props.bgColor};
+const animation = keyframes`
+  0%{
+    background-color: purple;
+    border-radius: 0px;
+  }
+  50%{
+    background-color: wheat;
+    border-radius: 50px;
+  }
+  100%{
+    background-color: purple;
+    border-radius: 0px;
+    }
+`;
+const AnimationBox = styled.div`
   width: 100px;
   height: 100px;
-`;
-const Circle = styled(Box)`
-  border-radius: 100%;
-`;
-const Text = styled.span`
-  color: white;
-`;
-const Btn = styled.button`
-  color: tomato;
-  background-color: teal;
-  border: 0;
-  border-radius: 15px;
+  background-color: purple;
+  animation: ${animation} 1s linear infinite;
   display: flex;
   align-items: center;
+  justify-content: center;
+  h1 {
+    color: white;
+    &:hover {
+      color: black;
+    }
+  }
 `;
-const Input = styled.input.attrs({ disabled: true })``;
 
 function App() {
   return (
     <Father>
-      <Box bgColor="mistyrose" />
-      <Circle bgColor="lightskyblue" />
-      <Btn as="a" href="#">
-        Login
-      </Btn>
-      <Input />
+      <AnimationBox>
+        <h1>Good</h1>
+      </AnimationBox>
     </Father>
   );
 }
