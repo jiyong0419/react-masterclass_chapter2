@@ -17,6 +17,7 @@ const animation = keyframes`
     border-radius: 0px;
     }
 `;
+const H1 = styled.h1``;
 const AnimationBox = styled.div`
   width: 100px;
   height: 100px;
@@ -25,10 +26,10 @@ const AnimationBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  h1 {
+  ${H1} {
     color: white;
     &:hover {
-      color: black;
+      color: red;
     }
   }
 `;
@@ -37,8 +38,9 @@ function App() {
   return (
     <Father>
       <AnimationBox>
-        <h1>Good</h1>
+        <H1>Good</H1>
       </AnimationBox>
+      <H1>Look</H1>
     </Father>
   );
 }
